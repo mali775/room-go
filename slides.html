@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>AITU Rooms - Курстық жұмыс презентациясы</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0F172A;
+    color: #0F172A;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #F8FAFC;
+  }
+
+  /* Slide 1 - Title Slide (Dark Theme) */
+  .slide-title-bg {
+    background: radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                #0F172A;
+    color: #FFFFFF;
+  }
+
+  .top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #38BDF8;
+    width: fit-content;
+  }
+
+  .header-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #2563EB;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
+
+  h1.main-title {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-top: 24px;
+    color: #FFFFFF;
+  }
+
+  .main-subtitle {
+    font-size: 26px;
+    font-weight: 500;
+    color: #94A3B8;
+    margin-top: 20px;
+    max-width: 1200px;
+    line-height: 1.5;
+  }
+
+  .title-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 36px;
+  }
+
+  .student-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 36px;
+    border-radius: 20px;
+  }
+
+  .student-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .student-spec {
+    font-size: 18px;
+    color: #94A3B8;
+    margin-top: 4px;
+  }
+
+  /* Slide Content Header */
+  .slide-header {
+    margin-bottom: 40px;
+  }
+
+  .slide-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  .slide-subtitle {
+    font-size: 20px;
+    color: #64748B;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* Slide Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 20px;
+    font-size: 15px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    flex: 1;
+    margin-bottom: 30px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    margin-bottom: 30px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    flex: 1;
+    margin-bottom: 30px;
+  }
+
+  /* Cards */
+  .card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 36px;
+    border: 1.5px solid #E2E8F0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #EFF6FF;
+    color: #2563EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+  }
+
+  .card-desc {
+    font-size: 17px;
+    color: #64748B;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .card-accent {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #1E293B;
+  }
+
+  .card-accent .card-title {
+    color: #FFFFFF;
+  }
+
+  .card-accent .card-desc {
+    color: #94A3B8;
+  }
+
+  .card-accent .card-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #38BDF8;
+  }
+
+  /* Numbered List Card */
+  .num-card {
+    display: flex;
+    gap: 24px;
+    background: #FFFFFF;
+    padding: 24px 30px;
+    border-radius: 20px;
+    border: 1.5px solid #F1F5F9;
+    align-items: center;
+  }
+
+  .num-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: #2563EB;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .num-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.4;
+  }
+
+  /* Tables */
+  .table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1.5px solid #E2E8F0;
+  }
+
+  .table-custom th {
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .table-custom td {
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #334155;
+    border-bottom: 1px solid #F1F5F9;
+    font-weight: 500;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 13px;
+    background: #ECFDF5;
+    color: #059669;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ==================== СЛАЙД 1: ТИТУЛДЫҚ БЕТ ==================== -->
+  <div class="slide slide-title-bg">
+    <div>
+      <div class="top-badge">
+        <span>🏛️</span>
+        <span>«ASTANA IT UNIVERSITY» ЖШС КОЛЛЕДЖІ</span>
+      </div>
+      <h1 class="main-title">AITU ROOMS</h1>
+      <p class="main-subtitle">
+        Astana IT University студенттері мен оқытушыларына арналған бос аудиторияларды іздеу және брондау мобильді қосымшасын әзірлеу
+      </p>
+    </div>
+
+    <div class="title-footer">
+      <div>
+        <div style="font-size: 16px; color: #38BDF8; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px;">КУРСТЫҚ ЖОБА</div>
+        <div style="font-size: 20px; color: #E2E8F0; font-weight: 600;">Пән: «Мобильді қосымшаларды әзірлеу»</div>
+      </div>
+      <div class="student-card">
+        <div class="student-name">Құсайынова Малика</div>
+        <div class="student-spec">Мамандығы: 06130100 – Бағдарламалық қамтамасыз ету</div>
+        <div style="font-size: 15px; color: #38BDF8; margin-top: 6px;">Астана, 2026 ж.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 2: ӨЗЕКТІЛІГІ МЕН МАҚСАТЫ ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">МАҢЫЗДЫЛЫҒЫ</div>
+      <h2 class="slide-title">Тақырыптың өзектілігі мен жобаның мақсаты</h2>
+      <p class="slide-subtitle">Неліктен университет үшін бұл қосымша қажет болды?</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Өзекті мәселелер</div>
+        <div class="card-desc">
+          • Сабақтан тыс уақытта бос кабинеттерді табу үшін барлық қабаттарды аралап іздеу қажеттілігі;<br><br>
+          • Аудиториялар арасындағы қақтығыстар (бір уақытта бірнеше студенттік топтың жиналуы);<br><br>
+          • Кабинеттердің техникалық жабдықталуы (iMac, 4K проектор, Wi-Fi) туралы ақпараттың жоқтығы;<br><br>
+          • Smart Campus тұжырымдамасына сай бірыңғай цифрлық шешімнің болмауы.
+        </div>
+      </div>
+
+      <div class="card card-accent">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">Жобаның басты мақсаты</div>
+        <div class="card-desc" style="font-size: 20px; line-height: 1.7;">
+          «Astana IT University» студенттері мен оқытушыларына бос оқу кеңістіктерін нақты уақыт режимінде табуға, интерактивті уақыт интервалымен брондауға, сабақ кестесін көруге және 3D карта арқылы навигация жасауға арналған <strong>заманауи, сенімді әрі үштілді мобильді қосымшаны</strong> әзірлеу.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 2 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 3: ҚОЙЫЛҒАН МІНДЕТТЕР ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">ЖОСПАР МЕН МІНДЕТТЕР</div>
+      <h2 class="slide-title">Жоба аясында шешілген негізгі міндеттер</h2>
+      <p class="slide-subtitle">Мақсатқа жету үшін жүзеге асырылған 6 жүйелі қадам</p>
+    </div>
+
+    <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="num-card">
+        <div class="num-circle">1</div>
+        <div class="num-text">Қолданыстағы отандық және шетелдік кампустық сервистерге (Robin Powered, Google Calendar) салыстырмалы талдау жүргізу</div>
+      </div>
+      <div class="num-card">
+        <div class="num-circle">2</div>
+        <div class="num-text">Жүйенің функционалдық, пайдаланушылық және техникалық талаптарын тұжырымдау</div>
+      </div>
+      <div class="num-card">
+        <div class="num-circle">3</div>
+        <div class="num-text">Реляциондық деректер қорының құрылымын жобалау (users, rooms, keste кестелері)</div>
+      </div>
+      <div class="num-card">
+        <div class="num-circle">4</div>
+        <div class="num-text">Flutter/Dart негізінде Apple Minimal стиліндегі ыңғайлы UI/UX интерфейсін жасақтау</div>
+      </div>
+      <div class="num-card">
+        <div class="num-circle">5</div>
+        <div class="num-text">Интерактивті брондау, сабақ кестесі («Кесте») және кампустың 3D картасын толық іске асыру</div>
+      </div>
+      <div class="num-card">
+        <div class="num-circle">6</div>
+        <div class="num-text">Бағдарламалық жасақтаманы функционалдық тестілеуден өткізу және өнімділікке талдау жасау</div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 3 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 4: ТЕХНОЛОГИЯЛЫҚ СТЕК ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">ТЕХНОЛОГИЯЛАР</div>
+      <h2 class="slide-title">Қолданылған заманауи технологиялық стек</h2>
+      <p class="slide-subtitle">Өнімділік пен кроссплатформалылықты қамтамасыз ететін құралдар</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <div class="card-title">Flutter & Dart</div>
+        <div class="card-desc">
+          Google ұсынған бірыңғай кодпен (Single Codebase) Android, iOS және Web платформаларында өнімді жұмыс істейтін заманауи фреймворк.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Provider</div>
+        <div class="card-desc">
+          Қосымшаның реактивті күйін (State Management) таза әрі жылдам басқаруға арналған архитектуралық шешім.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🗄️</div>
+        <div class="card-title">PostgreSQL</div>
+        <div class="card-desc">
+          Сенімділігі жоғары, ACID талаптарына толық сәйкес келетін кәсіби реляциондық деректер қоры.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <div class="card-title">Campus 3D Map</div>
+        <div class="card-desc">
+          AITU-дың ресми 3D интерактивті картасын HtmlElementView арқылы қосымша ішіне тікелей кірістіру.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 4 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 5: АРХИТЕКТУРА ЖӘНЕ ДҚ ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">АРХИТЕКТУРА</div>
+      <h2 class="slide-title">Жүйе архитектурасы және Деректер қоры</h2>
+      <p class="slide-subtitle">Реляциондық байланыстар мен қабатты құрылым</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">1. users кестесі</div>
+        <div class="card-desc">
+          • <strong>id</strong> (PK, SERIAL)<br>
+          • <strong>email</strong> (VARCHAR, UNIQUE)<br>
+          • <strong>password</strong> (VARCHAR)<br>
+          • <strong>role</strong> (VARCHAR, default 'student')<br><br>
+          Студенттер мен оқытушылардың авторизациялық мәліметтерін сақтайды.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. rooms кестесі</div>
+        <div class="card-desc">
+          • <strong>id</strong> (PK, SERIAL)<br>
+          • <strong>name</strong> (мыс. C1.1.201)<br>
+          • <strong>capacity</strong> (орын саны: 36, 120)<br>
+          • <strong>floor, type, building</strong><br>
+          • <strong>features</strong> (жабдықталуы)<br>
+          • <strong>is_available</strong> (бос/бос емес)
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">3. keste кестесі</div>
+        <div class="card-desc">
+          • <strong>id</strong> (PK, SERIAL)<br>
+          • <strong>room_id</strong> (FK → rooms.id)<br>
+          • <strong>user_id</strong> (FK → users.id)<br>
+          • <strong>subject</strong> (пән/мақсат)<br>
+          • <strong>time_slot</strong> (09:00 - 10:20)<br>
+          • <strong>day, status</strong> ('lecture', 'booked')
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 5 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 6: НЕГІЗГІ ЭКРАНДАР МЕН КАТАЛОГ ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">ИНТЕРФЕЙС</div>
+      <h2 class="slide-title">Қосымшаның негізгі функционалдық экрандары</h2>
+      <p class="slide-subtitle">Басты бет, іздеу, смарт сүзгілер және жабдықталу карточкалары</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <div class="card-title">Splash & Авторизация</div>
+        <div class="card-desc">
+          • Қараңғы стильдегі фирмалық анимациялық логотип;<br>
+          • Email және құпиясөзді тексеру (валидация);<br>
+          • Тез көрсетуге арналған 1-шертумен «Демо-кіру» батырмасы.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <div class="card-title">Rooms (Басты каталог)</div>
+        <div class="card-desc">
+          • Жиынтық статистика: Барлығы, Бос, Брондалған;<br>
+          • Тірі іздеу (номер немесе пән бойынша);<br>
+          • Сүзгілер чиптері: Қазір бос, 1, 2, 3 қабат, IT/AI labs.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <div class="card-title">Аудитория карточкалары</div>
+        <div class="card-desc">
+          • Күй индикаторлары: Жасыл (AVAILABLE) / Қызыл (IN USE);<br>
+          • Жабдықталуы: 4K Проектор, iMac M3, Wi-Fi 6, Кондиционер;<br>
+          • Интерактивті «Брондау» тетігі.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 6 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 7: ИНТЕРАКТИВТІ БРОНДАУ ЖӘНЕ КЕСТЕ ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">НЕГІЗГІ МОДУЛЬ</div>
+      <h2 class="slide-title">Интерактивті брондау және «Кесте» модулі</h2>
+      <p class="slide-subtitle">Уақыт таңдау, деректерді сақтау және сабақ кестесін қалыптастыру</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon">⏱️</div>
+        <div class="card-title">Брондау тетігі (Modal Bottom Sheet)</div>
+        <div class="card-desc">
+          1. Студент бос аудиторияның «Брондау» батырмасын басады;<br><br>
+          2. Төменнен ыңғайлы терезе ашылып, нақты уақытты таңдайды (09:00-10:20, 10:30-11:50, 14:00-15:20...);<br><br>
+          3. Мақсатын жазады (өздік жұмыс, хакатонға дайындық);<br><br>
+          4. «Растау» басылғанда аудитория «Бос емес» болып өзгереді, ал жазба дереу «Кесте» мен «Профильге» түседі.
+        </div>
+      </div>
+
+      <div class="card card-accent">
+        <div class="card-icon">📅</div>
+        <div class="card-title">«Кесте» (Timetable) бөлімі</div>
+        <div class="card-desc">
+          • Төменгі мәзірдегі бөлек 2-ші қойынды;<br><br>
+          • Дүйсенбі, Сейсенбі, Сәрсенбі күндері бойынша сабақтар мен өткізілетін дәрістер кестесі;<br><br>
+          • Визуалды түсті бейдждер: Көк (Дәріс), Күлгін (Зертхана), Сарғыш (Тәжірибе), Жасыл (Студенттік бронь);<br><br>
+          • Студент өз бронын 1-шертумен қайтара алады.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 7 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 8: КАРТА ЖӘНЕ ДИЗАЙН ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">НАВИГАЦИЯ & ДИЗАЙН</div>
+      <h2 class="slide-title">Кампус 3D картасы және Apple UI/UX эстетикасы</h2>
+      <p class="slide-subtitle">Заманауи пайдаланушы тәжірибесі және үштілділік</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🧭</div>
+        <div class="card-title">AITU 3D картасы</div>
+        <div class="card-desc">
+          Қосымшаның ішіне кірістірілген интерактивті 3D навигатор. Студенттерге ғимарат ішінде адаспай, кабинетті бірден табуға мүмкіндік береді.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💎</div>
+        <div class="card-title">Матовый шыны (Frosted Glass)</div>
+        <div class="card-desc">
+          Apple стандарттарына сай қалқымалы төменгі мәзірде BackdropFilter эффектисі қолданылған. Контент сырғығанда асты әдемі бұлдырайды.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <div class="card-title">Толық үштілділік</div>
+        <div class="card-desc">
+          Қазақ тілі (негізгі), Орыс және Ағылшын тілдерін бірден ауыстыру. Студенттің жеке кабинеті мен сессияны толық тазартатын «Шығу» функциясы.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 8 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 9: ТЕСТІЛЕУ НӘТИЖЕЛЕРІ ==================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="header-tag">СЫНАҚ & САПА</div>
+      <h2 class="slide-title">Функционалдық тестілеу нәтижелері</h2>
+      <p class="slide-subtitle">Жүйенің тұрақтылығы мен қатесіз жұмысы</p>
+    </div>
+
+    <table class="table-custom">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Тексерілген сценарий</th>
+          <th>Күтілген нәтиже</th>
+          <th>Нақты нәтиже</th>
+          <th>Мәртебесі</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Жаңа аккаунтты тіркеу</td>
+          <td>Деректер сақталады, растау хабарламасы</td>
+          <td>Сәтті тіркелді</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Қате мәліметпен кіру</td>
+          <td>Қате туралы қызыл ескерту</td>
+          <td>Қызыл Snackbar шықты</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Аудиторияны брондау</td>
+          <td>«Бос емес» болып, кестеге жазылады</td>
+          <td>Дереу жазылды</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Броньды кері қайтару</td>
+          <td>Аудитория босатылады</td>
+          <td>Бөлме босатылды</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Тілді ауыстыру (Қаз/Орыс/Ағыл)</td>
+          <td>Мәтіндер бір сәтте ауысады</td>
+          <td>Қатесіз ауысты</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Жүйеден шығу («Шығу»)</td>
+          <td>Сессия тазарады, логин ашылады</td>
+          <td>Толық тазарды</td>
+          <td><span class="status-badge">Өтті ✅</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slide-footer">
+      <span>AITU Rooms • Курстық жоба</span>
+      <span>Слайд 9 / 10</span>
+    </div>
+  </div>
+
+  <!-- ==================== СЛАЙД 10: ҚОРЫТЫНДЫ ==================== -->
+  <div class="slide slide-title-bg">
+    <div>
+      <div class="top-badge">ҚОРЫТЫНДЫ ЖӘНЕ НӘТИЖЕЛЕР</div>
+      <h2 class="main-title" style="font-size: 54px; margin-top: 18px;">Жобаның нәтижесі мен болашағы</h2>
+      <p class="main-subtitle" style="font-size: 22px;">
+        «AITU Rooms» мобильді қосымшасы барлық қойылған талаптарға сай толықтай әзірленді және оқу орнына енгізуге дайын.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin-top: 30px; margin-bottom: 30px;">
+      <div class="card" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15);">
+        <div style="font-size: 20px; font-weight: 800; color: #38BDF8; margin-bottom: 8px;">Практикалық маңызы</div>
+        <div style="font-size: 16px; color: #E2E8F0; line-height: 1.5;">Студенттер мен оқытушылардың уақытын үнемдейді, оқу кеңістігін тиімді басқарады.</div>
+      </div>
+
+      <div class="card" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15);">
+        <div style="font-size: 20px; font-weight: 800; color: #38BDF8; margin-bottom: 8px;">Критерийлерге сәйкестік</div>
+        <div style="font-size: 16px; color: #E2E8F0; line-height: 1.5;">Методичкадағы барлық 14 бағалау критерийі 100% толықтай орындалды.</div>
+      </div>
+
+      <div class="card" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.15);">
+        <div style="font-size: 20px; font-weight: 800; color: #38BDF8; margin-bottom: 8px;">Болашақ даму бағыты</div>
+        <div style="font-size: 16px; color: #E2E8F0; line-height: 1.5;">Telegram-ботпен байланыстыру және студенттік RFID карталармен интеграциялау.</div>
+      </div>
+    </div>
+
+    <div class="title-footer" style="padding-top: 24px;">
+      <div style="font-size: 28px; font-weight: 800; color: #FFFFFF;">
+        Назарларыңызға рақмет! Сұрақтарыңыз болса, қуана жауап беремін.
+      </div>
+      <div style="font-size: 20px; color: #38BDF8; font-weight: 700;">AITU Rooms 2026</div>
+    </div>
+  </div>
+
+</body>
+</html>

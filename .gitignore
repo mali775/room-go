@@ -1,0 +1,14 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+tmp_chrome/
+.DS_Store
+.idea/
+.vscode/
+*.iml
+.env
+.gradle/
